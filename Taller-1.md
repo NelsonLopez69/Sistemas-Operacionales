@@ -17,7 +17,7 @@ Comparo los dos archivos con el comando diff
 Resultado:
 
 InputObject            	  | SideIndicator
-----------------------------------------------   
+--------------------------|-------------------   
 file                      | =>           
 Myfiles, name, property   | <=           
 channel                   | <=  
