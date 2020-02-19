@@ -30,9 +30,8 @@ Out-File : Cannot process argument because the value of argument "path" is null.
 of argument "path" to a non-null value.
 At line:1 char:42
 + Get-Service | Export-Csv servicios.csv | Out-File
-+                                          ~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [Out-File], PSArgumentNullException
-    + FullyQualifiedErrorId : ArgumentNull,Microsoft.PowerShell.Commands.OutFileCommand
+     CategoryInfo          : InvalidArgument: (:) [Out-File], PSArgumentNullException
+     FullyQualifiedErrorId : ArgumentNull,Microsoft.PowerShell.Commands.OutFileCommand
 
 ##### Lo que ocurre es que el comaando out-file requiere de un parametro que indique la ruta del archivo en donde se mostrara el archivo inicial .csv
 
