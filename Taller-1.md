@@ -53,18 +53,21 @@ Ejemplo: Get-content .\uno.txt | Set-Content .\dos.txt -Confirm
 
 Get-Process |Export-Csv prueba.csv -Delimiter ((Get-Culture).TextInfo.ListSeparator)
 
-## 6. get-random
+## 6. 
+get-random
 
-## 7. get-date
+## 7. 
+get-date
 
 ## 8. 
 
-##### El cmdlet get-date produce un objeto de tipo DateTime
+El cmdlet get-date produce un objeto de tipo DateTime
 
 ## 9. 
 Get-Date | Select-Object -Property DayOfWeek
 
-## 10.Get-HotFix
+## 10.
+Get-HotFix
 
 ## 11. Lista de parches instalados:
 
@@ -94,8 +97,9 @@ DESKTOP-SJ... Security Update  KB4532691     AUTORIDADE NT\SIS... 2/12/2020 12:0
 
 Get-HotFix | Select-Object -Property InstalledOn, InstalledBy, HotfixID | Sort-Object -Property InstalledOn
 
+
 InstalledOn           | InstalledBy          | HotfixID 
-----------------------|----------------------|-----------
+-----------	      |------------	     |-----------
 1/28/2019 12:00:00 AM | AUTORIDADE NT\SISTEMA| KB4470788
 1/29/2019 12:00:00 AM | AUTORIDADE NT\SISTEMA| KB4480056
 4/11/2019 12:00:00 AM | AUTORIDADE NT\SISTEMA| KB4493510
