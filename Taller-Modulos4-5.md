@@ -58,3 +58,36 @@ Mediante el cmdlet "where" se filtran los parches por su descripción y por quie
 
 Mediante el cmdlet "where" se filtran los procesos cuyos nombres correspondan a "Conhost" o "Svchost"
 
+
+# Modulo 5
+
+## 1. 
+**Comando:** Get-WmiObject -Namespace root\CIMv2 -list | where name -like '*adapter*'
+
+Para encontrar una clase relacionada con la direccion IP de un adapatador de red se hizo uso del comando WmiObject del namespace especificado y cuyo resultado se filtra usando el cmdlet "where" y buscando una clase que contenga la palabra "adapter". Haciendo esta búsqueda se encontró que la clase que se requeria era Win32_NetworkAdapterConfiguration. En dicha clase se muestra el atributo NetworkAddres que muestrala direccion IP de cada adaptador de red. Mediante el comando Get-WmiObject Win32_NetworkAdapterConfiguration | gm, se descubrip que existe un metodo llamado releaseDHCPLease que permite liberar un lease DHCP.
+
+## 2. 
+**Comando:** Get-WmiObject -Namespace root\CIMv2 -list | where name -like '*fix*'
+
+Usando el comando get-WmiObject -Namespace root\CIMv2 -list | where name -like '*fix*, el cual permitía buscar una clase que tuviera en su nombre la palabra "fix", se encontró la clase Win32_QuickFixEngineering. Para desplegar la lista de parches se utilizo el comando Get-WmiObject Win32_QuickfixEngineering. Usando el comando anterior y el comando Get-HotFix se comprobó que arrojan el mismo resultado.
+
+## 3. 
+**Comando:** Get-WmiObject Win32_Service | fl Status, startMode, startName
+
+Empleando la clase Win32_Service, se muestran todos los servicios del sistema. Haciendo uso del pipeline se muestran dichos servicios en una lista con los atributos de Status, startMode y startName que corresponde a las cuentas empleadas para hacer login.
+
+## 4. 
+**Comando:** Get-CimClass -Namespace root/SecurityCenter2 | where cimclassname -Like "*product*"
+
+Para seleccionar todas las clases del namespace especificado que tengan en su nombre la palabra "product", se hace uso del pipeline que se encarga de filtrar el atributo cimclassname y arrojar coincidencias de acuerdo a lo que se especifica en el parámetro -Like.
+
+## 5. 
+**Comando:** Get-CimInstance -Namespace root/SecurityCenter2 -ClassName "AntiSpywareProduct"
+
+Teniendo en cuenta que en el comando del punto anterior se msotraba una tabla con las diferentes clases en cuyo nombre se encontraba la palabra "product", se identificó la clase AntiSpywareProduct. Para identificar los nombres de las aplicaciones antispyware instaladas en el sistema se muestran las instancias que pueda tener la clase en cuestión.
+
+
+
+
+
+
