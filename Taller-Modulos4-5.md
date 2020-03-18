@@ -33,10 +33,12 @@ El comando Get-ChildItem proporciona todos los archivos del directorio especific
 ## 7. 
 **Comando:** Get-NetAdapter | where -filter {$_.Virtual -eq $false}
 
-El comandoGet-NetAdapter muestra una lista de adaptadores. Mediante el pipeline se filtra esta lista de adaptadores para que se muestren solamente los adaptadores cuyo atributo "Virtual" sea false, es decir que sea un adaptador no virtual.
+El comando Get-NetAdapter muestra una lista de adaptadores. Mediante el pipeline se filtra esta lista de adaptadores para que se muestren solamente los adaptadores cuyo atributo "Virtual" sea false, es decir que sea un adaptador no virtual.
 
 ## 8. 
-**Comando:**
+**Comando:** Get-DnsClientCache -Type A, AAA | fl
+
+El comando Get-DnsClientCache muestra los registros que se encuentren en la cache. El parametro -Type permite filtrar dichos registros por su tipo y por ultimo se utiliza el pipeline para crear una lsita con los registros previamente filtrados.
 
 ## 9. 
 **Comando:** Get-ChildItem -Path C:\Windows\System32 | where -filter {$_.Name -like "*.exe" -and $_.Length -gt 5MB } | fl Name, Length
