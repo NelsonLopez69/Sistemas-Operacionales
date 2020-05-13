@@ -60,8 +60,8 @@ do
                 Get-ChildItem $dir | sort Length -Descending |Select-Object -First 1 | ft Name, Length,DirectoryName
            } '4' {
                 cls
-		        Write-Host "Uso actual de swap:" Get-CimInstance -ClassName 'Win32_PageFileUsage'| Select-Object -Property CurrentUsage
-                	Write-Host "Memoria física libre:"Get-CimInstance Win32_OperatingSystem | Select FreePhysicalMemory
+		        Write-Host "Uso actual de swap: " $(Get-CimInstance -ClassName 'Win32_PageFileUsage'| Select-Object -Property CurrentUsage)
+                	Write-Host "Memoria física libre: "$(Get-CimInstance Win32_OperatingSystem | Select FreePhysicalMemory)
                  
 
            } '5' {
